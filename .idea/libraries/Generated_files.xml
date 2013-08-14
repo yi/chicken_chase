@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/engine/EventModule.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/Scene.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/Test.class.js" />
+        <item url="file://$PROJECT_DIR$/game/Bunny.Sprite.js" />
+        <item url="file://$PROJECT_DIR$/engine/Background.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/Platform.class.js" />
+        <item url="file://$PROJECT_DIR$/game/MenuScene.class.js" />
+        <item url="file://$PROJECT_DIR$/game/IntroScene.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/ScenesManager.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/Keyboard.class.js" />
+        <item url="file://$PROJECT_DIR$/game/Floor.class.js" />
+        <item url="file://$PROJECT_DIR$/game/GameScene.class.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/engine/EventModule.js" />
+      <root url="file://$PROJECT_DIR$/engine/EventModule.js" />
+      <root url="file://$PROJECT_DIR$/engine/Scene.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/Background.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/Platform.class.js" />
+      <root url="file://$PROJECT_DIR$/game/IntroScene.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/ScenesManager.class.js" />
+      <root url="file://$PROJECT_DIR$/game/Floor.class.js" />
+      <root url="file://$PROJECT_DIR$/game/GameScene.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/Test.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/EventModule.class.js" />
+      <root url="file://$PROJECT_DIR$/game/Bunny.Sprite.js" />
+      <root url="file://$PROJECT_DIR$/game/MenuScene.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/Keyboard.class.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

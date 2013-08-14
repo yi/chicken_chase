@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>PIXI CHICKEN</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.8/TweenMax.min.js"></script>
+    <script src="lib/pixi.js"></script>
+    <script src="lib/Signal.js"></script>
+    <script src="lib/SignalBinding.js"></script>
+    <script src="engine/ScenesManager.class.js"></script>
+    <script src="engine/Scene.class.js"></script>
+    <script src="engine/Keyboard.class.js"></script>
+    <script src="game/GameScene.class.js"></script>
+    <script src="game/MenuScene.class.js"></script>
+    <script src="game/Bunny.Sprite.js"></script>
+    <script src="game/Floor.class.js"></script>
+    <script src="engine/Background.class.js"></script>
+    <style>
+        body {padding:0; margin:0; }
+    </style>
+</head>
+<body>
+
+    <script>        
+        //get reference of ScenesManager;
+        var scenesManager = com.cc.ScenesManager;
+        
+        //create 
+        scenesManager.create(window.innerWidth, 500, true);;
+
+        //create a the game scene
+        var game = scenesManager.createScene('game', com.cc.GameScene);
+        var game = scenesManager.createScene('menu', com.cc.MenuScene);
+        var blank = scenesManager.createScene('blank');
+
+
+
+        scenesManager.goToScene('game');
+
+        $(function () {
+            $('#goToGame').click(function () {
+                scenesManager.goToScene('game');
+            });
+            $('#goToBlank').click(function () {
+                scenesManager.goToScene('blank');
+            });
+        })
+    </script>
+
+    <div>
+    <button id="goToGame">Switch to Game scene</button>
+    <button id="goToBlank">Switch to Blank scene</button>
+    </div>
+</body>
+</html>
