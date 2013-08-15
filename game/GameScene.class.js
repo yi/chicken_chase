@@ -102,7 +102,7 @@ var com;
             };
             GameScene.prototype.createEnemies = function () {
                 this.arr_enemies = new Array();
-                for(var n = 0; n < 10; n++) {
+                for(var n = 0; n < 100; n++) {
                     var b = PIXI.Sprite.fromImage("img/bunny.png");
                     b.anchor.x = 0.5;
                     b.anchor.y = 0.5;

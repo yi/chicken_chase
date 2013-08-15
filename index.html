@@ -17,27 +17,39 @@
     <script src="game/Bunny.Sprite.js"></script>
     <script src="game/Floor.class.js"></script>
     <script src="engine/Background.class.js"></script>
+    <script src="model/Assets.class.js"></script>
     <style>
         body {padding:0; margin:0; }
     </style>
 </head>
 <body>
 
-    <script>        
-        //get reference of ScenesManager;
-        var scenesManager = com.cc.ScenesManager;
-        
-        //create 
-        scenesManager.create(window.innerWidth, 500, true);;
+    <script>
 
-        //create a the game scene
-        var game = scenesManager.createScene('game', com.cc.GameScene);
-        var game = scenesManager.createScene('menu', com.cc.MenuScene);
-        var blank = scenesManager.createScene('blank');
+        /**
+         * preload everything
+         */
+        var assetsToLoader = [ "mysprite.json"];
+        loader = new PIXI.AssetLoader(assetsToLoader);
+        loader.onComplete = onAssetsLoaded;
+        loader.load();
+
+        function onAssetsLoaded()
+        {
 
 
+            console.log("assets loaded");
+            //get reference of ScenesManager;
+            var scenesManager = com.cc.ScenesManager;
+            //create
+            scenesManager.create(window.innerWidth, 500, true);
+            //create a the game scene
+            var game = scenesManager.createScene('game', com.cc.GameScene);
+            var game = scenesManager.createScene('menu', com.cc.MenuScene);
+            var blank = scenesManager.createScene('blank');
+            scenesManager.goToScene('game');
 
-        scenesManager.goToScene('game');
+        }
 
         $(function () {
             $('#goToGame').click(function () {
