@@ -5,6 +5,7 @@
 ///<reference path="../engine/ScenesManager.class.ts" />
 ///<reference path="../engine/Keyboard.class.ts" />
 ///<reference path="../engine/Background.class.ts" />
+///<reference path="../model/Assets.class.ts" />
 ///<reference path="Bunny.Sprite.ts" />
 ///<reference path="Floor.class.ts" />
 ///<reference path="IntroScene.class.ts" />
@@ -37,7 +38,7 @@ module com.cc {
             this.bunny.anchor.x = 0.5;
             this.bunny.anchor.y = 0.5;
             // move the sprite t the center of the screen
-            this.bunny.position.x = 50;
+            this.bunny.position.x = 150;
             this.bunny.position.y = 50;
 
             this.addChild(this.bunny);
@@ -55,7 +56,7 @@ module com.cc {
             hero.create();
             hero.heroSprite.setInteractive(true);
             hero.heroSprite.buttonMode = true;
-           // hero.heroSprite.dragging = true;
+            // hero.heroSprite.dragging = true;
             hero.heroSprite.mousedown = hero.heroSprite.touchstart = function(data)
             {
                 console.log("click");
@@ -101,24 +102,22 @@ module com.cc {
 
             this.createEnemies();
 
-             this.gameSpeed = 5;
+            this.gameSpeed = 5;
 
 
             /**
              * Add keyboard
              */
-             this.keyboard = new Keyboard;
+            this.keyboard = new Keyboard;
             this.keyboard.keyboardSignal.add(this.onKeyboard, this);
 
-             this.createFloor(100);
-             this.alive = true;
-             //var int=self.setInterval(function(){clock()},1000);
+            this.createFloor(100);
+            this.alive = true;
 
-            //var t = setInterval(() =>this.createFloor(100), 3200);
         }
 
+
         public onKeyboard(keyCode) {
-           // console.log("keyCode: "+keyCode);
 
             switch (keyCode) {
                 case 107:
@@ -133,13 +132,13 @@ module com.cc {
         }
 
         public resume() {
-             super.resume();
-             this.bunny.position.y = 50;
-         }
+            super.resume();
+            this.bunny.position.y = 50;
+        }
 
         public update() {
             super.update();
-            this.hero.update();
+            this.hero.update(this.gameSpeed);
 
             if(this.alive){
                 this.calcDelta();
@@ -148,7 +147,7 @@ module com.cc {
                 this.checkKeyboard();
                 this.moveBackground();
                 this.manageFloors();
-             }
+            }
         }
 
         private checkKeyboard() {
@@ -160,7 +159,7 @@ module com.cc {
 
         private createEnemies() {
             this.arr_enemies = new Array;
-            for (var n = 0; n < 100; n++)
+            for (var n = 0; n < 110; n++)
             {
                 var b = PIXI.Sprite.fromImage("img/bunny.png");
                 b.anchor.x = 0.5;
@@ -191,7 +190,7 @@ module com.cc {
             var lastFloor:FloorItem =  this.arr_Floors[this.arr_Floors.length-1];
             var firstFloor:FloorItem =  this.arr_Floors[0];
             if( (lastFloor.position.x + lastFloor.width) < (window.innerWidth - Math.random()*250 ) ) {
-                  this.createFloor(100);
+                this.createFloor(100);
             }
 
             if( firstFloor.position.x + firstFloor.width < 0 ) {
@@ -288,25 +287,25 @@ module com.cc {
                         this.hero.floorY = this.floorActive.position.y;
                     }
 
-                   /* if((hero.position.y < this.arr_Floors[i].position.y)) {
-                       this.hero.floorY = this.arr_Floors[i].position.y;
-                   }  else {
+                    /* if((hero.position.y < this.arr_Floors[i].position.y)) {
+                     this.hero.floorY = this.arr_Floors[i].position.y;
+                     }  else {
 
 
-                        this.gameSpeed = 0;
-                        this.hero.floorY = 800;
-                        this.hero.position.x -= 32;
-                        this.alive = false;
-                   }  */
+                     this.gameSpeed = 0;
+                     this.hero.floorY = 800;
+                     this.hero.position.x -= 32;
+                     this.alive = false;
+                     }  */
 
                     return;
                 } else {
                     //this.floorActive = null;
-                   // console.log("NO FLOOR");
+                    // console.log("NO FLOOR");
                     this.hero.floorY = 500;
                 }
 
-               // if( this.floorActive != null) this.hero.floorY = 500;
+                // if( this.floorActive != null) this.hero.floorY = 500;
             }
 
 
@@ -314,14 +313,14 @@ module com.cc {
 
 
 
-           // this.floor.position.y +=  Math.random() > 0.5 ? 1 : -1;
+            // this.floor.position.y +=  Math.random() > 0.5 ? 1 : -1;
 
             //console.log("hero: "+hero.position.y +" floor: "+this.floor.y);
 
-          //  if(hero.position.y+(hero.height/2) > this.floor.position.y - (5)) {
+            //  if(hero.position.y+(hero.height/2) > this.floor.position.y - (5)) {
 
-          //      hero.position.y =  (this.floor.position.y) - hero.height/2;
-          //  }
+            //      hero.position.y =  (this.floor.position.y) - hero.height/2;
+            //  }
 
 
         }

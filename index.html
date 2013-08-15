@@ -29,16 +29,15 @@
         /**
          * preload everything
          */
-        var assetsToLoader = [ "mysprite.json"];
+        var assetsToLoader = [ "jumper.json", "runner.json"];
         loader = new PIXI.AssetLoader(assetsToLoader);
         loader.onComplete = onAssetsLoaded;
         loader.load();
 
         function onAssetsLoaded()
         {
+            var assets = com.cc.Assets();
 
-
-            console.log("assets loaded");
             //get reference of ScenesManager;
             var scenesManager = com.cc.ScenesManager;
             //create

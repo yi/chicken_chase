@@ -17,7 +17,7 @@ var com;
                 this.bunny = PIXI.Sprite.fromImage("img/bunny.png");
                 this.bunny.anchor.x = 0.5;
                 this.bunny.anchor.y = 0.5;
-                this.bunny.position.x = 50;
+                this.bunny.position.x = 150;
                 this.bunny.position.y = 50;
                 this.addChild(this.bunny);
                 this.hero = new cc.Hero();
@@ -85,7 +85,7 @@ var com;
             };
             GameScene.prototype.update = function () {
                 _super.prototype.update.call(this);
-                this.hero.update();
+                this.hero.update(this.gameSpeed);
                 if(this.alive) {
                     this.calcDelta();
                     this.checkCollisions();
@@ -102,7 +102,7 @@ var com;
             };
             GameScene.prototype.createEnemies = function () {
                 this.arr_enemies = new Array();
-                for(var n = 0; n < 100; n++) {
+                for(var n = 0; n < 110; n++) {
                     var b = PIXI.Sprite.fromImage("img/bunny.png");
                     b.anchor.x = 0.5;
                     b.anchor.y = 0.5;
