@@ -96,13 +96,13 @@ module com.cc {
                 hero.uiJump();
             }
             button.setInteractive(true);
-            this.addChild(button);
+           // this.addChild(button);
 
             this.setInteractive(true);
 
             this.createEnemies();
 
-            this.gameSpeed = 5;
+            this.gameSpeed = 8;
 
 
             /**
@@ -173,6 +173,7 @@ module com.cc {
                 b.anchor.x = 0.5;
                 b.anchor.y = 0.5;
                 b.position.x = Math.floor(Math.random() * (window.innerWidth));
+
                 b.position.y = 200;//Math.floor(Math.random() * (window.innerHeight));
 
                 this.addChild(b);
@@ -189,10 +190,12 @@ module com.cc {
             var randomWidth:Number = Math.floor(Math.random()*100);
             this.floor = new FloorItem(randomWidth);
             this.addChild(this.floor);
+
             if(this.arr_Floors.length>0){
                 this.floor.position.x = this.arr_Floors[this.arr_Floors.length-1].position.x +  this.arr_Floors[this.arr_Floors.length-1].width;
             } else {
                 this.floor.position.x = window.innerWidth;
+
             }
 
             if(this.grad) {

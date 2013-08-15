@@ -47,9 +47,9 @@ module com.cc {
         constructor(){
             super();
             console.log("Hero init");
-            this.bunny = PIXI.Sprite.fromImage("img/bunny.png");
-            this.rocket = PIXI.Sprite.fromImage("img/rocket.png");
-            this.rocket.visible=false;
+            this.bunny = PIXI.Sprite.fromImage("img/chicken_torso.png");
+            this.rocket = PIXI.Sprite.fromImage("img/chicken_torso.png");
+            //this.rocket.visible=false;
             // center the sprites anchor point
             this.bunny.anchor.x = 0.5;
             this.bunny.anchor.y = 1;
@@ -59,12 +59,13 @@ module com.cc {
             this.addChild(this.bunny);
             //this.bunny.visible = false;
 
-            this.rocket.anchor.x = 0.5;
-            this.rocket.anchor.y = 0.5;
+
+            this.rocket.anchor.x = 0.45;
+            this.rocket.anchor.y = 0.8;
             // move the sprite t the center of the screen
-             this.rocket.position.x = 350;
+            this.rocket.position.x = 350;
             this.rocket.position.y = -350;
-            this.addChild(this.rocket);
+
             this._heroSprite = this.rocket;
             this.blah = "blah blah";
             this.jumping = false;
@@ -115,7 +116,7 @@ module com.cc {
             mc_jumping.animationSpeed=0.5;
             mc_jumping.loop = false;
             this.mc_current = mc_running;
-
+            this.addChild(this.rocket);
         }
         public  create() {
             console.log(this.blah)
