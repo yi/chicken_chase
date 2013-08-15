@@ -32,6 +32,13 @@
               }
 
               floor.y=400;
+
+
+              var skytexture = PIXI.Texture.fromImage("img/grass.png");
+
+              var floorTile = new PIXI.TilingSprite(skytexture, randomWidth, 400)
+              this.addChild(floorTile);
+              //floorTile.position.x = floor
           }
     }
 }

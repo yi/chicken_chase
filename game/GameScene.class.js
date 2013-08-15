@@ -9,8 +9,11 @@ var com;
         var GameScene = (function (_super) {
             __extends(GameScene, _super);
             function GameScene() {
+                var _this = this;
                         _super.call(this);
                 this.arr_Floors = new Array();
+                this.count = 0;
+                this.currentheight = 400;
                 this.then = Date.now();
                 this.bg = new cc.Background();
                 this.addChild(this.bg);
@@ -66,7 +69,14 @@ var com;
                 this.keyboard.keyboardSignal.add(this.onKeyboard, this);
                 this.createFloor(100);
                 this.alive = true;
+                setInterval(function () {
+                    return _this.setGradient();
+                }, 3000);
             }
+            GameScene.prototype.setGradient = function () {
+                console.log("grad " + this.grad);
+                this.grad = Math.random() > 0.5 ? true : false;
+            };
             GameScene.prototype.onKeyboard = function (keyCode) {
                 switch(keyCode) {
                     case 107:
@@ -113,17 +123,29 @@ var com;
                 }
             };
             GameScene.prototype.createFloor = function (ypos) {
-                var randomWidth = Math.floor(Math.random() * 1000);
+                var randomWidth = Math.floor(Math.random() * 100);
                 this.floor = new cc.FloorItem(randomWidth);
                 this.addChild(this.floor);
-                this.floor.position.x = window.innerWidth;
-                this.floor.position.y = 200 + Math.random() * ypos;
+                if(this.arr_Floors.length > 0) {
+                    this.floor.position.x = this.arr_Floors[this.arr_Floors.length - 1].position.x + this.arr_Floors[this.arr_Floors.length - 1].width;
+                } else {
+                    this.floor.position.x = window.innerWidth;
+                }
+                if(this.grad) {
+                    this.currentheight++;
+                } else {
+                    this.currentheight--;
+                }
+                if((this.currentheight > 470) || (this.currentheight < 350)) {
+                    this.grad = !this.grad;
+                }
+                this.floor.position.y = this.currentheight;
                 this.arr_Floors.push(this.floor);
             };
             GameScene.prototype.manageFloors = function () {
                 var lastFloor = this.arr_Floors[this.arr_Floors.length - 1];
                 var firstFloor = this.arr_Floors[0];
-                if((lastFloor.position.x + lastFloor.width) < (window.innerWidth - Math.random() * 250)) {
+                if((lastFloor.position.x + lastFloor.width) < (window.innerWidth)) {
                     this.createFloor(100);
                 }
                 if(firstFloor.position.x + firstFloor.width < 0) {
@@ -174,7 +196,7 @@ var com;
                     var rightFloor = this.arr_Floors[i].position.x + this.arr_Floors[i].width;
                     if((hero.position.x > leftFloor) && (hero.position.x < rightFloor)) {
                         this.floorActive = this.arr_Floors[i];
-                        if((hero.position.y + 32) > this.floorActive.position.y) {
+                        if((hero.position.y) > this.floorActive.position.y) {
                             this.alive = false;
                             this.hero.floorY = 800;
                             this.hero.position.x -= 32;

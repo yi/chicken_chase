@@ -143,8 +143,10 @@ module com.cc {
             this.light2.position.x = this.rocket.position.x;
             this.light2.position.y = this.rocket.position.y;
 
-            this.mc_current.position.x = this.rocket.position.x;
-            this.mc_current.position.y = this.rocket.position.y;
+            this.mc_running.position.x = this.rocket.position.x;
+            this.mc_running.position.y = this.rocket.position.y;
+            this.mc_jumping.position.x = this.rocket.position.x;
+            this.mc_jumping.position.y = this.rocket.position.y;
 
             this.light1.rotation+=0.02;
             this.light2.rotation+=0.04;

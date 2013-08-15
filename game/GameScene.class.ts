@@ -114,8 +114,16 @@ module com.cc {
             this.createFloor(100);
             this.alive = true;
 
+            setInterval( () => this.setGradient(), 3000);
+
         }
 
+        public grad:bool;
+        private timerToken;
+        private setGradient() {
+             console.log("grad "+this.grad);
+             this.grad = Math.random() > 0.5 ? true : false;
+        }
 
         public onKeyboard(keyCode) {
 
@@ -173,23 +181,37 @@ module com.cc {
         }
 
         private arr_Floors:Array = new Array();
+        private count = 0;
+        private currentheight:number = 400;
+
         private createFloor(ypos:Number) {
 
-            var randomWidth:Number = Math.floor(Math.random()*1000);
+            var randomWidth:Number = Math.floor(Math.random()*100);
             this.floor = new FloorItem(randomWidth);
             this.addChild(this.floor);
-            this.floor.position.x = window.innerWidth;
-            this.floor.position.y = 200 + Math.random()*ypos;
+            if(this.arr_Floors.length>0){
+                this.floor.position.x = this.arr_Floors[this.arr_Floors.length-1].position.x +  this.arr_Floors[this.arr_Floors.length-1].width;
+            } else {
+                this.floor.position.x = window.innerWidth;
+            }
+
+            if(this.grad) {
+                this.currentheight++;
+            }  else {
+                this.currentheight--;
+            }
+            if( (this.currentheight > 470) || (this.currentheight < 350 )) this.grad = !this.grad;
+
+            this.floor.position.y = this.currentheight;
             this.arr_Floors.push( this.floor );
-
-
 
         }
         //http://localhost/PixiChicken/index2.html
         private manageFloors() {
             var lastFloor:FloorItem =  this.arr_Floors[this.arr_Floors.length-1];
             var firstFloor:FloorItem =  this.arr_Floors[0];
-            if( (lastFloor.position.x + lastFloor.width) < (window.innerWidth - Math.random()*250 ) ) {
+            //if( (lastFloor.position.x + lastFloor.width) < (window.innerWidth - Math.random()*250 ) ) {
+            if( (lastFloor.position.x + lastFloor.width) < (window.innerWidth  ) ) {
                 this.createFloor(100);
             }
 
@@ -279,7 +301,7 @@ module com.cc {
                 if( (hero.position.x > leftFloor) && (hero.position.x<rightFloor) ) {
                     this.floorActive =  this.arr_Floors[i];
 
-                    if((hero.position.y+32) > this.floorActive.position.y) {
+                    if((hero.position.y) > this.floorActive.position.y) {
                         this.alive = false;
                         this.hero.floorY = 800;
                         this.hero.position.x -= 32;
