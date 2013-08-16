@@ -60,6 +60,12 @@ module com.cc {
             return false;
         }
 
+        public static pause() {
+            ScenesManager.currentScene.pause();
+        }
+        public static resume() {
+            ScenesManager.currentScene.resume();
+        }
     }
 
 }

@@ -48,6 +48,17 @@
             var blank = scenesManager.createScene('blank');
             scenesManager.goToScene('game');
 
+            $(window).blur(function(e) {
+                console.log("lose focus");
+                scenesManager.pause();
+            });
+            $(window).focus(function(e) {
+                console.log("gain focus");
+                scenesManager.resume();
+            });
+            $('#resume').click(function () {
+                scenesManager.resume();
+            });
         }
 
         $(function () {
@@ -57,8 +68,10 @@
             $('#goToBlank').click(function () {
                 scenesManager.goToScene('blank');
             });
+
         })
     </script>
 <div style="font-family:arial; padding:10px;">SPACE to jump. Numpad + - for speed<br/><a href="javascript:location.reload();">reset</a></div>
+<button id="resume">resume</button>
 </body>
 </html>

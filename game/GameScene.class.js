@@ -73,7 +73,6 @@ var com;
                 }, 3000);
             }
             GameScene.prototype.setGradient = function () {
-                console.log("grad " + this.grad);
                 this.grad = Math.random() > 0.5 ? true : false;
             };
             GameScene.prototype.onKeyboard = function (keyCode) {
@@ -89,6 +88,7 @@ var com;
                 }
             };
             GameScene.prototype.resume = function () {
+                this.then = new Date();
                 _super.prototype.resume.call(this);
                 this.bunny.position.y = 50;
             };
@@ -111,6 +111,7 @@ var com;
             };
             GameScene.prototype.createEnemies = function () {
                 this.arr_enemies = new Array();
+                console.log("createEnemies");
                 for(var n = 0; n < 110; n++) {
                     var b = PIXI.Sprite.fromImage("img/bunny.png");
                     b.anchor.x = 0.5;

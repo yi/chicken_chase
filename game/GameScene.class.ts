@@ -121,7 +121,7 @@ module com.cc {
         public grad:bool;
         private timerToken;
         private setGradient() {
-             console.log("grad "+this.grad);
+             //console.log("grad "+this.grad);
              this.grad = Math.random() > 0.5 ? true : false;
         }
 
@@ -140,6 +140,8 @@ module com.cc {
         }
 
         public resume() {
+            // reset delta
+            this.then =new Date();
             super.resume();
             this.bunny.position.y = 50;
         }
@@ -167,13 +169,14 @@ module com.cc {
 
         private createEnemies() {
             this.arr_enemies = new Array;
+
+            console.log("createEnemies");
             for (var n = 0; n < 110; n++)
             {
                 var b = PIXI.Sprite.fromImage("img/bunny.png");
                 b.anchor.x = 0.5;
                 b.anchor.y = 0.5;
                 b.position.x = Math.floor(Math.random() * (window.innerWidth));
-
                 b.position.y = 200;//Math.floor(Math.random() * (window.innerHeight));
 
                 this.addChild(b);
@@ -190,12 +193,10 @@ module com.cc {
             var randomWidth:Number = Math.floor(Math.random()*100);
             this.floor = new FloorItem(randomWidth);
             this.addChild(this.floor);
-
             if(this.arr_Floors.length>0){
                 this.floor.position.x = this.arr_Floors[this.arr_Floors.length-1].position.x +  this.arr_Floors[this.arr_Floors.length-1].width;
             } else {
                 this.floor.position.x = window.innerWidth;
-
             }
 
             if(this.grad) {
@@ -209,7 +210,7 @@ module com.cc {
             this.arr_Floors.push( this.floor );
 
         }
-        //http://localhost/PixiChicken/index2.html
+
         private manageFloors() {
             var lastFloor:FloorItem =  this.arr_Floors[this.arr_Floors.length-1];
             var firstFloor:FloorItem =  this.arr_Floors[0];
@@ -244,6 +245,7 @@ module com.cc {
         }
 
         private moveEnemies() {
+
 
             var arr = this.arr_enemies;
             var distance = (50 * this.delta) * this.gameSpeed;

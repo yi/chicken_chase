@@ -45,6 +45,12 @@ var com;
                 }
                 return false;
             };
+            ScenesManager.pause = function pause() {
+                ScenesManager.currentScene.pause();
+            };
+            ScenesManager.resume = function resume() {
+                ScenesManager.currentScene.resume();
+            };
             return ScenesManager;
         })();
         cc.ScenesManager = ScenesManager;        
