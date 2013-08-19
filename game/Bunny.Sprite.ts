@@ -31,7 +31,8 @@ module com.cc {
         private isJumping:bool = true;
         private boost:Number = 0;
         private count:Number = 0;
-        private jumping:bool;
+        public jumping:bool;
+        public falling:bool;
 
         public floorY:Number;
 
@@ -119,7 +120,7 @@ module com.cc {
             this.addChild(this.rocket);
         }
         public  create() {
-            console.log(this.blah)
+
         }
 
         public switch(){
@@ -130,6 +131,8 @@ module com.cc {
         public update(gameSpeed) {
 
             this.yVel += this.gravity - this.boost;
+
+            this.falling = this.yVel < 0;
 
             this.rocket.position.y += this.yVel;
 
@@ -184,8 +187,9 @@ module com.cc {
         }
         private checkKeyboard() {
 
-            if(this.keyboard.isDown(32) && !this.jumping){
+            if(this.keyboard.isDown(32) && !this.jumping && (!(this.yVel>0.1))){
            // if(this.keyboard.isDown(32)){
+
                 this.jumping=true;
                 this.mc_jumping.gotoAndPlay(0);
                 this.boostup();

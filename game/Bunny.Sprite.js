@@ -74,7 +74,6 @@ var com;
                 this.addChild(this.rocket);
             }
             Hero.prototype.create = function () {
-                console.log(this.blah);
             };
             Hero.prototype.switch = function () {
                 this.rocket.visible = !this.rocket.visible;
@@ -82,6 +81,7 @@ var com;
             };
             Hero.prototype.update = function (gameSpeed) {
                 this.yVel += this.gravity - this.boost;
+                this.falling = this.yVel < 0;
                 this.rocket.position.y += this.yVel;
                 if(this.rocket.position.y + (this.rocket.height / 2) > this.floorY) {
                     this.jumping = false;
@@ -123,7 +123,7 @@ var com;
                 }
             };
             Hero.prototype.checkKeyboard = function () {
-                if(this.keyboard.isDown(32) && !this.jumping) {
+                if(this.keyboard.isDown(32) && !this.jumping && (!(this.yVel > 0.1))) {
                     this.jumping = true;
                     this.mc_jumping.gotoAndPlay(0);
                     this.boostup();

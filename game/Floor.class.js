@@ -8,14 +8,15 @@ var com;
     (function (cc) {
         var FloorItem = (function (_super) {
             __extends(FloorItem, _super);
-            function FloorItem(randomWidth) {
+            function FloorItem(randomWidth, floorHeight) {
+                if (typeof floorHeight === "undefined") { floorHeight = 300; }
                         _super.call(this);
                 this.floor = new PIXI.Graphics();
                 var floor = this.floor;
                 floor = new PIXI.Graphics();
                 floor.beginFill(0x333333);
                 floor.lineStyle(0, 0xFF0000);
-                floor.drawRect(0, 0, randomWidth, 300);
+                floor.drawRect(0, 0, randomWidth, floorHeight);
                 floor.setInteractive(true);
                 this.addChild(floor);
                 this.width = randomWidth;
@@ -25,7 +26,7 @@ var com;
                 };
                 floor.y = 400;
                 var skytexture = PIXI.Texture.fromImage("img/grass.png");
-                var floorTile = new PIXI.TilingSprite(skytexture, randomWidth, 400);
+                var floorTile = new PIXI.TilingSprite(skytexture, randomWidth, floorHeight);
                 this.addChild(floorTile);
             }
             return FloorItem;

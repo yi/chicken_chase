@@ -21,6 +21,7 @@ module com.cc {
         private bg:Background;
         private floor:FloorItem;
         private floorActive:FloorItem;
+        private buildingActive:FloorItem;
         public gameSpeed:number;
         private alive:bool;
 
@@ -31,21 +32,9 @@ module com.cc {
             this.bg = new Background();
             this.addChild(this.bg);
 
-            //add a bunny :) 
-            this.bunny = PIXI.Sprite.fromImage("img/bunny.png");
-            // center the sprites anchor point
-
-            this.bunny.anchor.x = 0.5;
-            this.bunny.anchor.y = 0.5;
-            // move the sprite t the center of the screen
-            this.bunny.position.x = 150;
-            this.bunny.position.y = 50;
-
-            this.addChild(this.bunny);
-
             /**
              * Lets add a custom displayObject !!!!!!!
-             *
+             *   the hero
              */
 
             this.hero = new Hero;
@@ -56,7 +45,7 @@ module com.cc {
             hero.create();
             hero.heroSprite.setInteractive(true);
             hero.heroSprite.buttonMode = true;
-            // hero.heroSprite.dragging = true;
+
             hero.heroSprite.mousedown = hero.heroSprite.touchstart = function(data)
             {
                 console.log("click");
@@ -112,6 +101,7 @@ module com.cc {
             this.keyboard.keyboardSignal.add(this.onKeyboard, this);
 
             this.createFloor(100);
+            this.createBuilding(100);
             this.alive = true;
 
             setInterval( () => this.setGradient(), 3000);
@@ -143,7 +133,6 @@ module com.cc {
             // reset delta
             this.then =new Date();
             super.resume();
-            this.bunny.position.y = 50;
         }
 
         public update() {
@@ -157,6 +146,7 @@ module com.cc {
                 this.checkKeyboard();
                 this.moveBackground();
                 this.manageFloors();
+                this.manageBuildings();
             }
         }
 
@@ -185,6 +175,8 @@ module com.cc {
         }
 
         private arr_Floors:Array = new Array();
+        private arr_Buildings:Array = new Array();
+        private arr_Platforms:Array = new Array();
         private count = 0;
         private currentheight:number = 400;
 
@@ -208,6 +200,7 @@ module com.cc {
 
             this.floor.position.y = this.currentheight;
             this.arr_Floors.push( this.floor );
+            this.arr_Platforms.push( this.floor );
 
         }
 
@@ -226,6 +219,44 @@ module com.cc {
 
 
         }
+
+        /**
+         * create some buildings
+         */
+        private createBuilding(ypos:Number) {
+
+            var randomWidth:Number = Math.floor(Math.random()*1000);
+            this.floor = new FloorItem(randomWidth,20);
+            this.addChild(this.floor);
+
+            if(this.arr_Buildings.length>0){
+                this.floor.position.x = this.arr_Floors[this.arr_Floors.length-1].position.x +  this.arr_Floors[this.arr_Floors.length-1].width;
+            } else {
+                this.floor.position.x = window.innerWidth;
+            }
+
+
+            this.floor.position.y = this.currentheight- Math.floor(Math.random()*100) -100;
+            this.arr_Buildings.push( this.floor );
+            this.arr_Platforms.push( this.floor );
+
+        }
+        private manageBuildings() {
+            var lastFloor:FloorItem =  this.arr_Buildings[this.arr_Buildings.length-1];
+            var firstFloor:FloorItem =  this.arr_Buildings[0];
+
+            if( (lastFloor.position.x + lastFloor.width) < (window.innerWidth - Math.random()*1000 )-100 ) {
+
+                this.createBuilding(100);
+            }
+
+            if( firstFloor.position.x + firstFloor.width < 0 ) {
+                this.removeChild(firstFloor);
+                this.arr_Buildings.splice(0,1);
+            }
+        }
+
+
 
 
         private now;
@@ -261,7 +292,7 @@ module com.cc {
                 }
             }
         }
-
+        private onFloor:bool = true;
         private checkCollisions() {
 
 
@@ -288,53 +319,71 @@ module com.cc {
                     }
                 }
             }
-
+            /**
+             *  this is moving the buildings and floor. move this to manage functions
+             *
+             */
             var distance = (100 * this.delta) * this.gameSpeed;
 
             for (var i = 0; i < this.arr_Floors.length; i++)
             {
                 this.arr_Floors[i].position.x  -= distance;
-            }
 
-            for (var i = 0; i < this.arr_Floors.length; i++)
+            }
+            for (var i = 0; i < this.arr_Buildings.length; i++)
             {
 
+                this.arr_Buildings[i].position.x  -= distance;
+            }
+            // end
+
+
+            /**
+             * find active floor sections
+             */
+            for (var i = 0; i < this.arr_Floors.length; i++)
+            {
                 var leftFloor:Number = this.arr_Floors[i].position.x;
                 var rightFloor:Number = this.arr_Floors[i].position.x + this.arr_Floors[i].width;
 
-                // get the currently active floor
                 if( (hero.position.x > leftFloor) && (hero.position.x<rightFloor) ) {
+
                     this.floorActive =  this.arr_Floors[i];
-
-                    if((hero.position.y) > this.floorActive.position.y) {
-                        this.alive = false;
-                        this.hero.floorY = 800;
-                        this.hero.position.x -= 32;
-                    } else {
-                        this.hero.floorY = this.floorActive.position.y;
-                    }
-
-                    /* if((hero.position.y < this.arr_Floors[i].position.y)) {
-                     this.hero.floorY = this.arr_Floors[i].position.y;
-                     }  else {
-
-
-                     this.gameSpeed = 0;
-                     this.hero.floorY = 800;
-                     this.hero.position.x -= 32;
-                     this.alive = false;
-                     }  */
-
-                    return;
-                } else {
-                    //this.floorActive = null;
-                    // console.log("NO FLOOR");
-                    this.hero.floorY = 500;
                 }
-
-                // if( this.floorActive != null) this.hero.floorY = 500;
             }
 
+            /**
+             * find active platform or floor
+             */
+            if(!hero.jumping){
+            for (var i = 0; i < this.arr_Platforms.length; i++)
+            {
+
+                var leftFloor:Number = this.arr_Platforms[i].position.x;
+                var rightFloor:Number = this.arr_Platforms[i].position.x + this.arr_Platforms[i].width;
+
+                // get the currently active floor
+                if( (hero.position.x > leftFloor) && (hero.position.x<rightFloor) ) {
+
+                    this.buildingActive =  this.arr_Platforms[i];
+
+                    if((hero.position.y) > this.buildingActive.position.y) {
+                       // this.alive = false;
+                       // this.hero.floorY = 800;
+                       // this.hero.position.x -= 32;
+                    } else {
+
+                        this.hero.floorY = this.buildingActive.position.y;
+
+                    }
+                    return;
+                } else {
+                   //console.log( this.floorActive);
+                    if(this.floorActive) this.hero.floorY = this.floorActive.position.y;
+                }
+
+            }
+            }
 
 
 

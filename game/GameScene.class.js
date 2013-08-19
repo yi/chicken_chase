@@ -12,17 +12,14 @@ var com;
                 var _this = this;
                         _super.call(this);
                 this.arr_Floors = new Array();
+                this.arr_Buildings = new Array();
+                this.arr_Platforms = new Array();
                 this.count = 0;
                 this.currentheight = 400;
                 this.then = Date.now();
+                this.onFloor = true;
                 this.bg = new cc.Background();
                 this.addChild(this.bg);
-                this.bunny = PIXI.Sprite.fromImage("img/bunny.png");
-                this.bunny.anchor.x = 0.5;
-                this.bunny.anchor.y = 0.5;
-                this.bunny.position.x = 150;
-                this.bunny.position.y = 50;
-                this.addChild(this.bunny);
                 this.hero = new cc.Hero();
                 var hero = this.hero;
                 hero.position.x = 0;
@@ -67,6 +64,7 @@ var com;
                 this.keyboard = new cc.Keyboard();
                 this.keyboard.keyboardSignal.add(this.onKeyboard, this);
                 this.createFloor(100);
+                this.createBuilding(100);
                 this.alive = true;
                 setInterval(function () {
                     return _this.setGradient();
@@ -90,7 +88,6 @@ var com;
             GameScene.prototype.resume = function () {
                 this.then = new Date();
                 _super.prototype.resume.call(this);
-                this.bunny.position.y = 50;
             };
             GameScene.prototype.update = function () {
                 _super.prototype.update.call(this);
@@ -102,6 +99,7 @@ var com;
                     this.checkKeyboard();
                     this.moveBackground();
                     this.manageFloors();
+                    this.manageBuildings();
                 }
             };
             GameScene.prototype.checkKeyboard = function () {
@@ -141,6 +139,7 @@ var com;
                 }
                 this.floor.position.y = this.currentheight;
                 this.arr_Floors.push(this.floor);
+                this.arr_Platforms.push(this.floor);
             };
             GameScene.prototype.manageFloors = function () {
                 var lastFloor = this.arr_Floors[this.arr_Floors.length - 1];
@@ -151,6 +150,30 @@ var com;
                 if(firstFloor.position.x + firstFloor.width < 0) {
                     this.removeChild(firstFloor);
                     this.arr_Floors.splice(0, 1);
+                }
+            };
+            GameScene.prototype.createBuilding = function (ypos) {
+                var randomWidth = Math.floor(Math.random() * 1000);
+                this.floor = new cc.FloorItem(randomWidth, 20);
+                this.addChild(this.floor);
+                if(this.arr_Buildings.length > 0) {
+                    this.floor.position.x = this.arr_Floors[this.arr_Floors.length - 1].position.x + this.arr_Floors[this.arr_Floors.length - 1].width;
+                } else {
+                    this.floor.position.x = window.innerWidth;
+                }
+                this.floor.position.y = this.currentheight - Math.floor(Math.random() * 100) - 100;
+                this.arr_Buildings.push(this.floor);
+                this.arr_Platforms.push(this.floor);
+            };
+            GameScene.prototype.manageBuildings = function () {
+                var lastFloor = this.arr_Buildings[this.arr_Buildings.length - 1];
+                var firstFloor = this.arr_Buildings[0];
+                if((lastFloor.position.x + lastFloor.width) < (window.innerWidth - Math.random() * 1000) - 100) {
+                    this.createBuilding(100);
+                }
+                if(firstFloor.position.x + firstFloor.width < 0) {
+                    this.removeChild(firstFloor);
+                    this.arr_Buildings.splice(0, 1);
                 }
             };
             GameScene.prototype.calcDelta = function () {
@@ -191,21 +214,32 @@ var com;
                 for(var i = 0; i < this.arr_Floors.length; i++) {
                     this.arr_Floors[i].position.x -= distance;
                 }
+                for(var i = 0; i < this.arr_Buildings.length; i++) {
+                    this.arr_Buildings[i].position.x -= distance;
+                }
                 for(var i = 0; i < this.arr_Floors.length; i++) {
                     var leftFloor = this.arr_Floors[i].position.x;
                     var rightFloor = this.arr_Floors[i].position.x + this.arr_Floors[i].width;
                     if((hero.position.x > leftFloor) && (hero.position.x < rightFloor)) {
                         this.floorActive = this.arr_Floors[i];
-                        if((hero.position.y) > this.floorActive.position.y) {
-                            this.alive = false;
-                            this.hero.floorY = 800;
-                            this.hero.position.x -= 32;
+                    }
+                }
+                if(!hero.jumping) {
+                    for(var i = 0; i < this.arr_Platforms.length; i++) {
+                        var leftFloor = this.arr_Platforms[i].position.x;
+                        var rightFloor = this.arr_Platforms[i].position.x + this.arr_Platforms[i].width;
+                        if((hero.position.x > leftFloor) && (hero.position.x < rightFloor)) {
+                            this.buildingActive = this.arr_Platforms[i];
+                            if((hero.position.y) > this.buildingActive.position.y) {
+                            } else {
+                                this.hero.floorY = this.buildingActive.position.y;
+                            }
+                            return;
                         } else {
-                            this.hero.floorY = this.floorActive.position.y;
+                            if(this.floorActive) {
+                                this.hero.floorY = this.floorActive.position.y;
+                            }
                         }
-                        return;
-                    } else {
-                        this.hero.floorY = 500;
                     }
                 }
             };

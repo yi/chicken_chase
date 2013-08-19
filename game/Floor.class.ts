@@ -12,7 +12,7 @@
         public floor = new PIXI.Graphics();
         public width:number;
 
-          constructor(randomWidth) {
+          constructor(randomWidth, floorHeight = 300) {
               super();
 
               var floor = this.floor;
@@ -21,7 +21,7 @@
               floor.lineStyle(0, 0xFF0000);
 
 
-              floor.drawRect(0,0,randomWidth,300);
+              floor.drawRect(0,0,randomWidth,floorHeight);
               floor.setInteractive(true);
               this.addChild(floor);
 
@@ -36,7 +36,7 @@
 
               var skytexture = PIXI.Texture.fromImage("img/grass.png");
 
-              var floorTile = new PIXI.TilingSprite(skytexture, randomWidth, 400)
+              var floorTile = new PIXI.TilingSprite(skytexture, randomWidth, floorHeight)
               this.addChild(floorTile);
               //floorTile.position.x = floor
           }

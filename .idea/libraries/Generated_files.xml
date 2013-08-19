@@ -3,17 +3,19 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/engine/Background.class.js" />
-        <item url="file://$PROJECT_DIR$/game/Floor.class.js" />
-        <item url="file://$PROJECT_DIR$/engine/Keyboard.class.js" />
-        <item url="file://$PROJECT_DIR$/engine/Scene.class.js" />
         <item url="file://$PROJECT_DIR$/game/MenuScene.class.js" />
+        <item url="file://$PROJECT_DIR$/lib/SignalBinding.js" />
+        <item url="file://$PROJECT_DIR$/lib/Signal.js" />
+        <item url="file://$PROJECT_DIR$/game/Floor.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/Scene.class.js" />
+        <item url="file://$PROJECT_DIR$/engine/Keyboard.class.js" />
         <item url="file://$PROJECT_DIR$/engine/Test.class.js" />
         <item url="file://$PROJECT_DIR$/game/GameScene.class.js" />
         <item url="file://$PROJECT_DIR$/engine/Platform.class.js" />
-        <item url="file://$PROJECT_DIR$/model/Assets.class.js" />
         <item url="file://$PROJECT_DIR$/game/IntroScene.class.js" />
         <item url="file://$PROJECT_DIR$/game/Bunny.Sprite.js" />
         <item url="file://$PROJECT_DIR$/engine/ScenesManager.class.js" />
+        <item url="file://$PROJECT_DIR$/model/Assets.class.js" />
         <item url="file://$PROJECT_DIR$/engine/EventModule.class.js" />
       </sourceFilesUrls>
     </properties>
@@ -22,15 +24,17 @@
       <root url="file://$PROJECT_DIR$/engine/EventModule.js" />
       <root url="file://$PROJECT_DIR$/engine/Background.class.js" />
       <root url="file://$PROJECT_DIR$/game/MenuScene.class.js" />
-      <root url="file://$PROJECT_DIR$/model/Assets.class.js" />
+      <root url="file://$PROJECT_DIR$/lib/SignalBinding.js" />
+      <root url="file://$PROJECT_DIR$/lib/Signal.js" />
       <root url="file://$PROJECT_DIR$/game/Floor.class.js" />
-      <root url="file://$PROJECT_DIR$/engine/Scene.class.js" />
       <root url="file://$PROJECT_DIR$/engine/Keyboard.class.js" />
+      <root url="file://$PROJECT_DIR$/engine/Scene.class.js" />
       <root url="file://$PROJECT_DIR$/game/GameScene.class.js" />
       <root url="file://$PROJECT_DIR$/engine/Test.class.js" />
       <root url="file://$PROJECT_DIR$/engine/Platform.class.js" />
       <root url="file://$PROJECT_DIR$/game/IntroScene.class.js" />
       <root url="file://$PROJECT_DIR$/game/Bunny.Sprite.js" />
+      <root url="file://$PROJECT_DIR$/model/Assets.class.js" />
       <root url="file://$PROJECT_DIR$/engine/ScenesManager.class.js" />
       <root url="file://$PROJECT_DIR$/engine/EventModule.class.js" />
     </CLASSES>
