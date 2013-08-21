@@ -12,6 +12,10 @@ module com.cc {
         private _isUp:bool;
         private pressed:Object ={};
 
+
+        public static KEYBOARD_UP:string = "keyboard up";
+        public static KEYBOARD_DOWN:string = "keyboard down";
+
         constructor() {
 
             this.keyboardSignal = new Signal();
@@ -26,11 +30,12 @@ module com.cc {
 
         public keyUp(e:Event) {
             //console.log(e.keyCode);
+            this.keyboardSignal.dispatch(Keyboard.KEYBOARD_UP, e.keyCode);
             delete this.pressed[e.keyCode];
         }
         public keyDown(e:Event) {
 
-            this.keyboardSignal.dispatch(e.keyCode);
+            this.keyboardSignal.dispatch(Keyboard.KEYBOARD_DOWN, e.keyCode);
 
             this.pressed[e.keyCode] = true;
 

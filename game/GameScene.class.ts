@@ -25,6 +25,7 @@ module com.cc {
         public gameSpeed:number;
         private alive:bool;
 
+
         constructor() {
             super();
 
@@ -136,8 +137,9 @@ module com.cc {
         }
 
         public update() {
+
             super.update();
-            this.hero.update(this.gameSpeed);
+            this.hero.update(this.gameSpeed, this.delta);
 
             if(this.alive){
                 this.calcDelta();
@@ -148,6 +150,7 @@ module com.cc {
                 this.manageFloors();
                 this.manageBuildings();
             }
+
         }
 
         private checkKeyboard() {
@@ -161,7 +164,7 @@ module com.cc {
             this.arr_enemies = new Array;
 
             console.log("createEnemies");
-            for (var n = 0; n < 110; n++)
+            for (var n = 0; n < 5; n++)
             {
                 var b = PIXI.Sprite.fromImage("img/bunny.png");
                 b.anchor.x = 0.5;
@@ -355,7 +358,7 @@ module com.cc {
             /**
              * find active platform or floor
              */
-            if(!hero.jumping){
+            if(!(this.hero.yVel<0)){
             for (var i = 0; i < this.arr_Platforms.length; i++)
             {
 

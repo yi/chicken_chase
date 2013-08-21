@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/game/GameScene.class.ts" line="144" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/game/GameScene.class.ts" line="146" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" name="Default" comment="" />
     <ignored path="PixiChicken.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/GameScene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376465653942" ignored="false" />
-    <file path="/ScenesManager.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376455071802" ignored="false" />
+    <file path="/GameScene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377049743394" ignored="false" />
+    <file path="/ScenesManager.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377044597022" ignored="false" />
     <file path="/index2.html" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376455245379" ignored="false" />
     <file path="/Scene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376455063507" ignored="false" />
-    <file path="/Bunny.Sprite.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376474913228" ignored="false" />
+    <file path="/Bunny.Sprite.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377058461367" ignored="false" />
     <file path="/Test.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376020409649" ignored="false" />
     <file path="$PROJECT_DIR$/../TS_learning/index.html" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376021922388" ignored="false" />
     <file path="$PROJECT_DIR$/../TS_learning/js/Main.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376021937644" ignored="false" />
     <file path="/Main.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376021299712" ignored="false" />
     <file path="$PROJECT_DIR$/../TS_learning/js/Main.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376021938919" ignored="false" />
     <file path="$PROJECT_DIR$/../TS_learning/js/Main.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376021938919" ignored="false" />
-    <file path="/index.html" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376533385729" ignored="false" />
-    <file path="/Keyboard.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376112146881" ignored="false" />
+    <file path="/index.html" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377043726254" ignored="false" />
+    <file path="/Keyboard.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377054376634" ignored="false" />
     <file path="/EventModule.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376096624078" ignored="false" />
     <file path="/Background.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376358686611" ignored="false" />
     <file path="/Floor.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376456761828" ignored="false" />
-    <file path="$PROJECT_DIR$/game/GameScene.class.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941731407" ignored="false" />
     <file path="/IntroScene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376455117417" ignored="false" />
     <file path="/MenuScene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376455130954" ignored="false" />
-    <file path="$PROJECT_DIR$/game/GameScene.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941731407" ignored="false" />
     <file path="$PROJECT_DIR$/engine/Background.class.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376530800553" ignored="false" />
     <file path="/Assets.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376533404906" ignored="false" />
     <file path="$PROJECT_DIR$/../../pixi.js-dev/pixi.js-dev/examples/example 3 - MovieClip/mymc.html" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376533293668" ignored="false" />
-    <file path="$PROJECT_DIR$/game/IntroScene.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941731045" ignored="false" />
-    <file path="$PROJECT_DIR$/engine/ScenesManager.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941442032" ignored="false" />
-    <file path="$PROJECT_DIR$/model/Assets.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941442032" ignored="false" />
-    <file path="$PROJECT_DIR$/game/Bunny.Sprite.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941731045" ignored="false" />
-    <file path="$PROJECT_DIR$/game/Floor.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941442032" ignored="false" />
+    <file path="$PROJECT_DIR$/game/IntroScene.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377052806230" ignored="false" />
+    <file path="$PROJECT_DIR$/model/Assets.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377043677344" ignored="false" />
+    <file path="$PROJECT_DIR$/game/Bunny.Sprite.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377121011445" ignored="false" />
+    <file path="$PROJECT_DIR$/game/Floor.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377052806230" ignored="false" />
     <file path="$PROJECT_DIR$/model/Assets.class.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941442032" ignored="false" />
-    <file path="$PROJECT_DIR$/game/Bunny.Sprite.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941731045" ignored="false" />
-    <file path="$PROJECT_DIR$/game/Floor.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941727388" ignored="false" />
-    <file path="$PROJECT_DIR$/game/Bunny.Sprite.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941727388" ignored="false" />
-    <file path="$PROJECT_DIR$/game/GameScene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941727388" ignored="false" />
-    <file path="$PROJECT_DIR$/game/IntroScene.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941727388" ignored="false" />
-    <file path="$PROJECT_DIR$/engine/Keyboard.class.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941727388" ignored="false" />
-    <file path="$PROJECT_DIR$/lib/pixi.d.ts" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1376941727388" ignored="false" />
+    <file path="$PROJECT_DIR$/game/Bunny.Sprite.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377121011445" ignored="false" />
+    <file path="D:/HTML5/pixi.js-master/pixi.js-master/bin/pixi.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377042751776" ignored="false" />
+    <file path="$PROJECT_DIR$/engine/Scene.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377043677344" ignored="false" />
+    <file path="$PROJECT_DIR$/engine/ScenesManager.class.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377044460680" ignored="false" />
+    <file path="$PROJECT_DIR$/engine/Keyboard.class.js" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377058403000" ignored="false" />
+    <file path="$PROJECT_DIR$/engine/Keyboard.class.js.map" changelist="7e784da4-82bf-4a3f-90cd-b16a26ef3c22" time="1377054370016" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,62 @@
     <favorites_list name="PixiChicken" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="GameScene.class.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/GameScene.class.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="8" selection-start="3583" selection-end="3724" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameScene.class.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/GameScene.class.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="9" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="45" selection-start="2747" selection-end="2747" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScenesManager.class.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/engine/ScenesManager.class.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="25" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bunny.Sprite.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game/Bunny.Sprite.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="133" column="8" selection-start="4045" selection-end="4045" vertical-scroll-proportion="0.08888889">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Keyboard.class.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/engine/Keyboard.class.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="25" selection-start="119" selection-end="127" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -75,18 +126,18 @@
         <option value="$PROJECT_DIR$/lib/pixi.js" />
         <option value="$PROJECT_DIR$/engine/EventModule.ts" />
         <option value="$PROJECT_DIR$/engine/EventModule.class.ts" />
-        <option value="$PROJECT_DIR$/engine/Keyboard.class.ts" />
         <option value="$PROJECT_DIR$/engine/Scene.class.ts" />
-        <option value="$PROJECT_DIR$/engine/ScenesManager.class.ts" />
         <option value="$PROJECT_DIR$/game/IntroScene.class.ts" />
         <option value="$PROJECT_DIR$/game/MenuScene.class.ts" />
         <option value="$PROJECT_DIR$/index2.html" />
         <option value="$PROJECT_DIR$/game/Floor.class.ts" />
-        <option value="$PROJECT_DIR$/game/Bunny.Sprite.ts" />
         <option value="$PROJECT_DIR$/engine/Background.class.ts" />
-        <option value="$PROJECT_DIR$/game/GameScene.class.ts" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/model/Assets.class.ts" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/engine/ScenesManager.class.ts" />
+        <option value="$PROJECT_DIR$/game/GameScene.class.ts" />
+        <option value="$PROJECT_DIR$/engine/Keyboard.class.ts" />
+        <option value="$PROJECT_DIR$/game/Bunny.Sprite.ts" />
       </list>
     </option>
   </component>
@@ -141,6 +192,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PixiChicken" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chicken_chase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PixiChicken" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chicken_chase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PixiChicken" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chicken_chase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameScene.class.ts" />
+              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PixiChicken" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chicken_chase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -167,11 +278,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp\www\PIXI_Chicken\chicken_chase\lib" />
       <recent name="D:\wamp\www\PIXI_Chicken\chicken_chase" />
       <recent name="D:\wamp\www\PixiChicken\img" />
       <recent name="D:\wamp\www\PixiChicken" />
       <recent name="D:\wamp\www\PixiChicken\lib" />
-      <recent name="D:\wamp\www\PixiChicken\game" />
     </key>
   </component>
   <component name="RunManager">
@@ -220,17 +331,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1034" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982001" sideWeight="0.89725333" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2054429" sideWeight="0.8996579" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27801493" sideWeight="0.90193844" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10034207" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09806158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -304,44 +415,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/engine/EventModule.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="60" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/Platform.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/IntroScene.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="96" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/Scene.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="77" selection-end="77" vertical-scroll-proportion="0.089121886">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game/MenuScene.class.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="120" selection-start="543" selection-end="543" vertical-scroll-proportion="0.30930537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/ScenesManager.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="55" selection-start="642" selection-end="642" vertical-scroll-proportion="0.022280471">
-          <folding />
-        </state>
+        <state line="15" column="120" selection-start="543" selection-end="543" vertical-scroll-proportion="0.30930537" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game/Floor.class.ts">
@@ -351,25 +427,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/Keyboard.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="56" selection-start="391" selection-end="393" vertical-scroll-proportion="0.3538663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/engine/Background.class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1384" selection-end="1384" vertical-scroll-proportion="0.7129751">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/GameScene.class.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="34" selection-start="5074" selection-end="5074" vertical-scroll-proportion="0.3342071">
-          <folding />
-        </state>
+        <state line="32" column="0" selection-start="1384" selection-end="1384" vertical-scroll-proportion="0.7129751" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/Background.class.ts">
@@ -379,18 +439,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/Bunny.Sprite.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="210" selection-end="210" vertical-scroll-proportion="-0.37876803">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Assets.class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/Assets.class.ts">
@@ -407,9 +458,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pixi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/stats.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/ScenesManager.class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="46" selection-start="795" selection-end="795" vertical-scroll-proportion="0.4450262" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="846" selection-end="846" vertical-scroll-proportion="0.023066485">
+        <state line="76" column="45" selection-start="2747" selection-end="2747" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/ScenesManager.class.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="25" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/GameScene.class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="9" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/GameScene.class.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="8" selection-start="3583" selection-end="3724" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/Keyboard.class.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="25" selection-start="119" selection-end="127" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/Bunny.Sprite.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="8" selection-start="4045" selection-end="4045" vertical-scroll-proportion="0.08888889">
           <folding />
         </state>
       </provider>

@@ -18,8 +18,16 @@ module com.cc {
         public static defaultHeight: number;
         public static width: number;
         public static height: number;
+        private static stats:any;
 
         public static create(width: number, height: number) {
+
+            this.stats = new Stats();
+            this.stats.setMode(3);
+            document.body.appendChild( this.stats.domElement );
+            this.stats.domElement.style.position = "absolute";
+            this.stats.domElement.style.top = "0px";
+
         if (ScenesManager.renderer) return this;
 
         ScenesManager.renderer = PIXI.autoDetectRenderer(width, height);
@@ -32,11 +40,14 @@ module com.cc {
         return this;
     }
         private static loop() {
+
+            ScenesManager.stats.begin();
             requestAnimFrame(function () { ScenesManager.loop() });
 
             if (!currentScene || currentScene.isPaused()) return;
             currentScene.update();
             ScenesManager.renderer.render(currentScene);
+            ScenesManager.stats.end();
         }
 
         public static createScene(id: string, TScene: new () => Scene = Scene): Scene {

@@ -11,10 +11,11 @@ var com;
             function Hero() {
                         _super.call(this);
                 this.yVel = 0;
-                this.gravity = 0.1;
+                this.gravity = 300;
                 this.isJumping = true;
-                this.boost = 0;
+                this.boost = 500;
                 this.count = 0;
+                this.longJump = false;
                 console.log("Hero init");
                 this.bunny = PIXI.Sprite.fromImage("img/chicken_torso.png");
                 this.rocket = PIXI.Sprite.fromImage("img/chicken_torso.png");
@@ -26,7 +27,7 @@ var com;
                 this.rocket.anchor.x = 0.45;
                 this.rocket.anchor.y = 0.8;
                 this.rocket.position.x = 350;
-                this.rocket.position.y = -350;
+                this.rocket.position.y = 100;
                 this._heroSprite = this.rocket;
                 this.blah = "blah blah";
                 this.jumping = false;
@@ -72,17 +73,57 @@ var com;
                 mc_jumping.loop = false;
                 this.mc_current = mc_running;
                 this.addChild(this.rocket);
+                this.configKeyboard();
             }
+            Hero.prototype.configKeyboard = function () {
+                this.keyboard.keyboardSignal.add(this.onKeyboard, this);
+            };
+            Hero.prototype.onKeyboard = function (type, code) {
+                var _this = this;
+                console.log("------------------------ " + code);
+                switch(type) {
+                    case com.cc.Keyboard.KEYBOARD_DOWN:
+                        if(code == 32) {
+                            this.keyTimeOut = setTimeout(function () {
+                                return _this.onJump(true);
+                            }, 50);
+                        }
+                        break;
+                    case com.cc.Keyboard.KEYBOARD_UP:
+                        if(code == 32) {
+                            this.onJump(false);
+                            clearTimeout(this.keyTimeOut);
+                        }
+                        break;
+                }
+            };
+            Hero.prototype.onJump = function (longJump) {
+                if (typeof longJump === "undefined") { longJump = false; }
+                console.log("------------------------");
+                if((!(this.yVel > 0.1)) && !this.jumping) {
+                    if(longJump) {
+                        this.boost = 500;
+                    } else {
+                        this.boost = 300;
+                    }
+                    this.yVel = -this.boost;
+                    this.jumping = true;
+                }
+            };
             Hero.prototype.create = function () {
             };
             Hero.prototype.switch = function () {
                 this.rocket.visible = !this.rocket.visible;
                 this.bunny.visible = !this.rocket.visible;
             };
-            Hero.prototype.update = function (gameSpeed) {
-                this.yVel += this.gravity - this.boost;
-                this.falling = this.yVel < 0;
-                this.rocket.position.y += this.yVel;
+            Hero.prototype.update = function (gameSpeed, delta) {
+                if(!(delta > 0)) {
+                    delta = 0;
+                } else {
+                }
+                delta = delta * 2;
+                this.yVel += (this.gravity * delta) * 3;
+                this.rocket.position.y += this.yVel * delta;
                 if(this.rocket.position.y + (this.rocket.height / 2) > this.floorY) {
                     this.jumping = false;
                     this.yVel = 0;
@@ -115,20 +156,15 @@ var com;
                 }
             };
             Hero.prototype.boostup = function () {
-                this.boost = 7;
             };
             Hero.prototype.boostdown = function () {
                 if(this.boost > 0) {
-                    this.boost -= 2;
+                    this.boost -= 1;
                 }
             };
             Hero.prototype.checkKeyboard = function () {
                 if(this.keyboard.isDown(32) && !this.jumping && (!(this.yVel > 0.1))) {
-                    this.jumping = true;
-                    this.mc_jumping.gotoAndPlay(0);
-                    this.boostup();
                 } else {
-                    this.boostdown();
                 }
             };
             Hero.prototype.uiJump = function () {

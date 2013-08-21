@@ -14,14 +14,17 @@ var com;
                     return _this.keyUp(event);
                 }, false);
             }
+            Keyboard.KEYBOARD_UP = "keyboard up";
+            Keyboard.KEYBOARD_DOWN = "keyboard down";
             Keyboard.prototype.isDown = function (keyCode) {
                 return this.pressed[keyCode];
             };
             Keyboard.prototype.keyUp = function (e) {
+                this.keyboardSignal.dispatch(Keyboard.KEYBOARD_UP, e.keyCode);
                 delete this.pressed[e.keyCode];
             };
             Keyboard.prototype.keyDown = function (e) {
-                this.keyboardSignal.dispatch(e.keyCode);
+                this.keyboardSignal.dispatch(Keyboard.KEYBOARD_DOWN, e.keyCode);
                 this.pressed[e.keyCode] = true;
             };
             return Keyboard;

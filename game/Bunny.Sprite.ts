@@ -26,10 +26,10 @@ module com.cc {
         private blah:String;
         public  dragging:bool;
 
-        private yVel:Number = 0;
-        private gravity:Number = 0.1;
+        public yVel:number = 0;
+        private gravity:Number = 300;
         private isJumping:bool = true;
-        private boost:Number = 0;
+        private boost:Number = 500;
         private count:Number = 0;
         public jumping:bool;
         public falling:bool;
@@ -65,7 +65,7 @@ module com.cc {
             this.rocket.anchor.y = 0.8;
             // move the sprite t the center of the screen
             this.rocket.position.x = 350;
-            this.rocket.position.y = -350;
+            this.rocket.position.y = 100;
 
             this._heroSprite = this.rocket;
             this.blah = "blah blah";
@@ -118,8 +118,54 @@ module com.cc {
             mc_jumping.loop = false;
             this.mc_current = mc_running;
             this.addChild(this.rocket);
+
+            this.configKeyboard();
+
         }
-        public  create() {
+
+        private configKeyboard() {
+
+            this.keyboard.keyboardSignal.add( this.onKeyboard, this );
+        }
+
+        private keyTimeOut:any;
+        private longJump:bool=false;
+
+
+        private onKeyboard(type,code) {
+            console.log("------------------------ "+code);
+            switch(type) {
+                case com.cc.Keyboard.KEYBOARD_DOWN:
+                    if(code==32){
+                        this.keyTimeOut = setTimeout( () => this.onJump(true), 50);
+                    }
+                    break;
+                case com.cc.Keyboard.KEYBOARD_UP:
+                    if(code==32){
+                        this.onJump(false);
+                        clearTimeout(this.keyTimeOut);
+
+                    }
+                    break;
+            }
+        }
+
+        public onJump(longJump:bool=false) {
+            console.log("------------------------");
+
+            if( (!(this.yVel>0.1)) && !this.jumping ){
+                if(longJump  ){
+                    this.boost=500;
+                }   else {
+                    this.boost=300;
+                }
+                this.yVel = -this.boost;
+                this.jumping=true;
+            }
+        }
+
+
+        private  create() {
 
         }
 
@@ -128,13 +174,20 @@ module com.cc {
             this.bunny.visible = !this.rocket.visible;
         }
 
-        public update(gameSpeed) {
+        public update(gameSpeed, delta) {
 
-            this.yVel += this.gravity - this.boost;
 
-            this.falling = this.yVel < 0;
+            if(!(delta>0)) {
+                delta = 0;
+            } else {
 
-            this.rocket.position.y += this.yVel;
+            }
+            delta = delta*2;
+
+            this.yVel += (this.gravity * delta)*3;
+
+
+            this.rocket.position.y += this.yVel * delta;
 
             if(this.rocket.position.y+(this.rocket.height/2) > this.floorY) {
                 this.jumping = false;
@@ -173,7 +226,7 @@ module com.cc {
             }
         }
         public boostup() {
-            this.boost=7;
+            //this.boost=4;
            /*
             if(this.boost<0.5) {
                 this.boost+=0.02;
@@ -182,20 +235,20 @@ module com.cc {
         }
         public boostdown() {
             if(this.boost>0){
-                this.boost-=2;
+                this.boost-=1;
             }
         }
         private checkKeyboard() {
 
             if(this.keyboard.isDown(32) && !this.jumping && (!(this.yVel>0.1))){
-           // if(this.keyboard.isDown(32)){
 
-                this.jumping=true;
-                this.mc_jumping.gotoAndPlay(0);
-                this.boostup();
+
+               // this.jumping=true;
+               // this.mc_jumping.gotoAndPlay(0);
+               // this.boostup();
             } else {
 
-                this.boostdown();
+               // this.boostdown();
             }
         }
 

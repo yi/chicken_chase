@@ -18,6 +18,7 @@
     <script src="game/Floor.class.js"></script>
     <script src="engine/Background.class.js"></script>
     <script src="model/Assets.class.js"></script>
+    <script src="lib/stats.min.js"></script>
     <style>
         body {padding:0; margin:0; }
     </style>
@@ -33,6 +34,7 @@
         loader = new PIXI.AssetLoader(assetsToLoader);
         loader.onComplete = onAssetsLoaded;
         loader.load();
+
 
         function onAssetsLoaded()
         {
@@ -71,7 +73,7 @@
 
         })
     </script>
-<div style="font-family:arial; padding:10px;">SPACE to jump. Numpad + - for speed<br/><a href="javascript:location.reload();">reset</a></div>
-<button id="resume">resume</button>
+<div style="font-family:arial; padding:10px; position: absolute; top:500px;">SPACE to jump. Numpad + - for speed<br/><a href="javascript:location.reload();">reset</a>
+<button id="resume">resume</button>    </div>
 </body>
 </html>

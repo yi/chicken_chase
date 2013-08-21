@@ -7,6 +7,11 @@ var com;
             };
             ScenesManager.ratio = 1;
             ScenesManager.create = function create(width, height) {
+                this.stats = new Stats();
+                this.stats.setMode(3);
+                document.body.appendChild(this.stats.domElement);
+                this.stats.domElement.style.position = "absolute";
+                this.stats.domElement.style.top = "0px";
                 if(ScenesManager.renderer) {
                     return this;
                 }
@@ -16,6 +21,7 @@ var com;
                 return this;
             };
             ScenesManager.loop = function loop() {
+                ScenesManager.stats.begin();
                 requestAnimFrame(function () {
                     ScenesManager.loop();
                 });
@@ -24,6 +30,7 @@ var com;
                 }
                 ScenesManager.currentScene.update();
                 ScenesManager.renderer.render(ScenesManager.currentScene);
+                ScenesManager.stats.end();
             };
             ScenesManager.createScene = function createScene(id, TScene) {
                 if (typeof TScene === "undefined") { TScene = cc.Scene; }
